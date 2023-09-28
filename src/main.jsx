@@ -7,6 +7,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 import Companies from './components/Companies/Companies';
+import EditCompany from './components/Companies/EditCompany';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,12 @@ const router = createBrowserRouter([
     element: <Dashboard/>,
     children: [
       {
-        path:"companies",
-        element: <Companies />
+        path:"companies/",
+        element: <Companies />,
+      },
+      {
+        path: "companies/edit/:id",
+        element: <EditCompany />
       }
     ]
   },
