@@ -33,6 +33,15 @@ export default function Companies() {
     <>
       <h1>Empresas</h1>
 
+      <div>
+        <Link
+          className="btn btn-success"
+          to="/companies/create"
+        >
+          Añadir empresa
+        </Link>
+      </div>
+
       <Table>
         <thead>
           <tr>
@@ -53,7 +62,7 @@ export default function Companies() {
                   >
                     Editar
                   </Link>
-                  <Button onClick={()=>openModal(company)}>Eliminar</Button>
+                  <Button onClick={() => openModal(company)}>Eliminar</Button>
                 </td>
               </tr>
             ))
@@ -63,16 +72,16 @@ export default function Companies() {
 
       {/* Modal para eliminar a una empresa */}
 
-      <Modal isOpen={modal} toggle={()=>setModal(!modal)}>
-        <ModalHeader toggle={()=>setModal(!modal)}>Modal title</ModalHeader>
+      <Modal isOpen={modal} toggle={() => setModal(!modal)}>
+        <ModalHeader toggle={() => setModal(!modal)}>Modal title</ModalHeader>
         <ModalBody>
           ¿Estas seguro de eliminar la empresa <span className="fw-bold"> {aboutToDeleteCompany.name}</span>?
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={()=> handleDeleteCompany(aboutToDeleteCompany._id)}>
+          <Button color="primary" onClick={() => handleDeleteCompany(aboutToDeleteCompany._id)}>
             Eliminar
           </Button>{' '}
-          <Button color="secondary" onClick={()=>setModal(false)}>
+          <Button color="secondary" onClick={() => setModal(false)}>
             Cancel
           </Button>
         </ModalFooter>

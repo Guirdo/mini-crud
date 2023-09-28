@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 import Companies from './components/Companies/Companies';
 import EditCompany from './components/Companies/EditCompany';
+import CreateCompany from './components/Companies/CreateCompany';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "companies/edit/:id",
         element: <EditCompany />
+      },
+      {
+        path: "companies/create",
+        element: <CreateCompany />
       }
     ]
   },
